@@ -1,0 +1,36 @@
+public class AutoboxingDemo {
+public static void
+main(String[] args) {
+
+// Autoboxing: primitive
+
+to wrapper object
+
+int price = 1500;
+Integer productPrice =
+
+price; // autoboxing
+
+System.out.println("Autoboxed
+Product Price: " +productPrice);
+
+// Unboxing: wrapper
+
+object to primitive
+
+Integer discount = 200;
+int discountValue =
+discount; // unboxing
+System.out.println("UnboxedDiscount Value: " +discountValue);
+
+int finalPrice =
+productPrice - discountValue;
+System.out.println("Final Price after Discount: " + finalPrice);
+}
+}
+
+OUTPUT:
+
+Autoboxed Product Price: 1500
+Unboxed Discount Value: 200
+Final Price after Discount: 1300
