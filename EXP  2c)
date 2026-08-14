@@ -31,7 +31,8 @@ System.out.println("Marks: " +marks.getData());
 }
 }
 
-Output:
+OUTPUT:
+
 Student Name: Ravi Kumar
 Roll Number: 21
 Marks: 89.5
