@@ -1,0 +1,67 @@
+interface SmartDevice {
+void operate();
+}
+class Light implements
+SmartDevice, Runnable {
+public void operate() {
+
+System.out.println("Light is ON");
+}
+public void run() {
+for (int i = 1; i <= 3;i++) {
+
+operate();
+try {
+
+Thread.sleep(200); } catch
+(InterruptedException e) {}
+
+}
+}
+}
+class Fan implements
+SmartDevice, Runnable {
+public void operate() {
+System.out.println("Fan
+
+is running");
+}
+public void run() {
+for (int i = 1; i <= 3;i++) {
+
+operate();
+
+try {
+
+Thread.sleep(200); } catch
+(InterruptedException e) {}
+
+}
+}
+}
+public class SmartHomeControl {
+public static void
+main(String[] args) {
+
+Thread lightThread = new
+
+Thread(new Light());
+
+Thread fanThread = new
+
+Thread(new Fan());
+
+lightThread.start();
+fanThread.start();
+}
+}
+
+OUTPUT (order may vary due to concurrentexecution):
+
+Light is ON
+Fan is running
+
+Light is ON
+Fan is running
+Light is ON
+Fan is running
