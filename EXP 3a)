@@ -13,8 +13,7 @@ System.out.println("Reversed password: " + sb.toString());
 }
 
 
-
-Output:
+OUTPUT:
 
 Enter password: Java@123
 Original password: Java@123
