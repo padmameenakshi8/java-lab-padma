@@ -1,0 +1,63 @@
+class Book {
+    String title;
+    String author;
+    double price;
+
+    Book(String title, String author, double price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    void displayBookDetails() {
+        System.out.println("Title  : " + title);
+        System.out.println("Author : " + author);
+        System.out.println("Price  : " + price);
+    }
+}
+
+class Library extends Book {
+    String libraryName;
+    String rackNumber;
+
+    Library(String title, String author, double price, String libraryName, String rackNumber) {
+        super(title, author, price);   // calling superclass constructor
+        this.libraryName = libraryName;
+        this.rackNumber = rackNumber;
+    }
+
+    void displayLibraryDetails() {
+        displayBookDetails();   // inherited method from Book
+        System.out.println("Library: " + libraryName);
+        System.out.println("Rack No: " + rackNumber);
+        System.out.println("-----------------------------");
+    }
+}
+
+public class LibraryManagementDemo {
+    public static void main(String[] args) {
+        Library book1 = new Library("Java Programming", "Herbert Schildt", 550.0, "Central Library", "R12");
+        Library book2 = new Library("Data Structures", "Seymour Lipschutz", 420.0, "City Library", "R7");
+
+        book1.displayLibraryDetails();
+        book2.displayLibraryDetails();
+    }
+}
+
+
+
+OUTPUT:
+
+Title  : Java Programming
+Author : Herbert Schildt
+Price  : 550.0
+Library: Central Library
+Rack No: R12
+
+Title  : Data Structures
+Author : Seymour Lipschutz
+Price  : 420.0
+Library: City Library
+Rack No: R7
+
+
