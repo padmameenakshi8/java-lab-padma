@@ -42,7 +42,7 @@ account.withdraw(10000);
 }
 }
 
-Output:
+OUTPUT:
 
 Deposited: 2000.0 
 New Balance:7000.0
