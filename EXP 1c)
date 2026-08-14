@@ -1,0 +1,67 @@
+class ElectricityBill {
+    String consumerName;
+    int consumerNumber;
+    int unitsConsumed;
+
+    static double ratePerUnit = 7.50;   // static rate, shared by all objects
+    static int totalConsumers = 0;      // static counter
+
+    ElectricityBill(String consumerName, int consumerNumber, int unitsConsumed) {
+        this.consumerName = consumerName;
+        this.consumerNumber = consumerNumber;
+        this.unitsConsumed = unitsConsumed;
+        totalConsumers++;
+    }
+
+    double calculateBill() {
+        return unitsConsumed * ratePerUnit;
+    }
+
+    void displayBill() {
+        System.out.println("Consumer Name   : " + consumerName);
+        System.out.println("Consumer Number : " + consumerNumber);
+        System.out.println("Units Consumed  : " + unitsConsumed);
+        System.out.println("Rate per Unit   : " + ratePerUnit);
+        System.out.println("Total Bill      : " + calculateBill());
+        System.out.println("-----------------------------");
+    }
+}
+
+public class ElectricityBillDemo {
+    public static void main(String[] args) {
+        ElectricityBill c1 = new ElectricityBill("Ramesh Iyer", 101, 250);
+        ElectricityBill c2 = new ElectricityBill("Sunita Rao", 102, 180);
+        ElectricityBill c3 = new ElectricityBill("Faisal Khan", 103, 320);
+
+        c1.displayBill();
+        c2.displayBill();
+        c3.displayBill();
+
+        System.out.println("Total Consumers : " + ElectricityBill.totalConsumers);
+    }
+}
+
+
+OUTPUT:
+
+
+Consumer Name   : Ramesh Iyer
+Consumer Number : 101
+Units Consumed  : 250
+Rate per Unit   : 7.5
+Total Bill      : 1875.0
+
+Consumer Name   : Sunita Rao
+Consumer Number : 102
+Units Consumed  : 180
+Rate per Unit   : 7.5
+Total Bill      : 1350.0
+
+Consumer Name   : Faisal Khan
+Consumer Number : 103
+Units Consumed  : 320
+Rate per Unit   : 7.5
+Total Bill      : 2400.0
+
+Total Consumers : 3
+
