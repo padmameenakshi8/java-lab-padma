@@ -1,0 +1,58 @@
+class CourseRegistration {
+    String studentName;
+    int studentId;
+    String courseName;
+
+    static int totalRegistrations = 0;   // static member - shared counter
+    static String platformName = "SkillUp Online Academy";  // static member - shared info
+
+    CourseRegistration(String studentName, String courseName) {
+        this.studentName = studentName;
+        this.courseName = courseName;
+        totalRegistrations++;
+        this.studentId = 1000 + totalRegistrations;  // auto-generated ID
+    }
+
+    void displayRegistration() {
+        System.out.println("Platform      : " + platformName);
+        System.out.println("Student ID    : " + studentId);
+        System.out.println("Student Name  : " + studentName);
+        System.out.println("Course Enrolled: " + courseName);
+        System.out.println("-----------------------------");
+    }
+}
+
+public class OnlineCourseRegistrationDemo {
+    public static void main(String[] args) {
+        CourseRegistration s1 = new CourseRegistration("Divya Menon", "Java Programming");
+        CourseRegistration s2 = new CourseRegistration("Arjun Nair", "Python for Beginners");
+        CourseRegistration s3 = new CourseRegistration("Kavya Reddy", "Web Development");
+
+        s1.displayRegistration();
+        s2.displayRegistration();
+        s3.displayRegistration();
+
+        System.out.println("Total Students Registered: " + CourseRegistration.totalRegistrations);
+    }
+}
+
+OUTPUT:
+
+
+Platform      : SkillUp Online Academy
+Student ID    : 1001
+Student Name  : Divya Menon
+Course Enrolled: Java Programming
+
+Platform      : SkillUp Online Academy
+Student ID    : 1002
+Student Name  : Arjun Nair
+Course Enrolled: Python for Beginners
+
+Platform      : SkillUp Online Academy
+Student ID    : 1003
+Student Name  : Kavya Reddy
+Course Enrolled: Web Development
+
+Total Students Registered: 3
+
