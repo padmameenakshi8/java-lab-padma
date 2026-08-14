@@ -19,7 +19,8 @@ System.out.println("Lowest Salary: " + Collections.min(salaries));
 }
 
 
-Output:
+OUTPUT:
+
 Before Sorting: [45000, 32000, 58000, 27000, 61000]
 After Sorting (Ascending): [27000, 32000, 45000, 58000, 61000]
 After Sorting (Descending): [61000, 58000, 45000, 32000, 27000]
