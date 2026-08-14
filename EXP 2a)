@@ -1,0 +1,51 @@
+interface BankOperations {
+void deposit(double amount);
+void withdraw(doubleamount);
+}
+
+class BankAccount implements
+BankOperations {
+private double balance;
+BankAccount(doubleinitialBalance) {
+balance =initialBalance;
+}
+public void deposit(doubleamount) {
+
+balance += amount;
+
+System.out.println("Deposited: "+ amount + " | New Balance: " +balance);
+}
+
+public void withdraw(doubleamount) {
+
+if (amount > balance) {
+
+System.out.println("Insufficientbalance!");
+} 
+else {
+
+balance -= amount;
+
+System.out.println("Withdrawn: "+ amount + " | New Balance: " +balance);
+}
+}
+}
+public class BankingSystem {
+public static void
+main(String[] args) {
+
+BankAccount account =new BankAccount(5000);
+
+account.deposit(2000);
+account.withdraw(3000);
+account.withdraw(10000);
+}
+}
+
+Output:
+
+Deposited: 2000.0 
+New Balance:7000.0
+Withdrawn: 3000.0 
+New Balance:4000.0
+Insufficient balance!
