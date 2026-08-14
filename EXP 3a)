@@ -1,3 +1,4 @@
+:
 import java.util.Scanner;
 public class PasswordReverser {
 public static void main(String[] args) {
@@ -14,6 +15,7 @@ System.out.println("Reversed password: " + sb.toString());
 
 
 Output:
+
 Enter password: Java@123
 Original password: Java@123
 Reversed password: 321@avaJ
